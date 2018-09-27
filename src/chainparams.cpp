@@ -233,7 +233,7 @@ public:
             boost::assign::map_list_of
             (  0, uint256S("0x000008f98b62f58f9d93906115f5a9339b1b17f569ecb2262be5132f618877ef"))
         };
-399
+
         chainTxData = ChainTxData{
             0 , // * UNIX timestamp of last known number of transactions
             0,    // * total number of transactions between genesis and that timestamp
