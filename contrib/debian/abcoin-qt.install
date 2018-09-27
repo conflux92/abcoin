@@ -1,0 +1,6 @@
+usr/local/bin/abcoin-qt usr/bin
+share/pixmaps/abcoin32.xpm usr/share/pixmaps
+share/pixmaps/abcoin16.xpm usr/share/pixmaps
+share/pixmaps/abcoin128.png usr/share/pixmaps
+debian/abcoin-qt.desktop usr/share/applications
+debian/abcoin-qt.protocol usr/share/kde4/services/

@@ -1,0 +1,11 @@
+[Desktop Entry]
+Encoding=UTF-8
+Name=Abcoin Core
+Comment=Abcoin P2P Cryptocurrency
+Exec=abcoin-qt %u
+Terminal=false
+Type=Application
+Icon=abcoin128
+MimeType=x-scheme-handler/abcoin;
+Categories=Office;Finance;
+Name[en_US]=abcoin-qt.desktop.desktop

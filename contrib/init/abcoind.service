@@ -1,0 +1,22 @@
+[Unit]
+Description=Abcoin's distributed currency daemon
+After=network.target
+
+[Service]
+User=abcoincore
+Group=abcoincore
+
+Type=forking
+PIDFile=/var/lib/abcoind/abcoind.pid
+ExecStart=/usr/bin/abcoind -daemon -pid=/var/lib/abcoind/abcoind.pid \
+-conf=/etc/abcoincore/abcoin.conf -datadir=/var/lib/abcoind -disablewallet
+
+Restart=always
+PrivateTmp=true
+TimeoutStopSec=60s
+TimeoutStartSec=2s
+StartLimitInterval=120s
+StartLimitBurst=5
+
+[Install]
+WantedBy=multi-user.target

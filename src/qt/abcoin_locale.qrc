@@ -1,0 +1,21 @@
+<!DOCTYPE RCC><RCC version="1.0">
+    <qresource prefix="/translations">
+        <file alias="bg">locale/abcoin_bg.qm</file>
+        <file alias="de">locale/abcoin_de.qm</file>
+        <file alias="en">locale/abcoin_en.qm</file>
+        <file alias="es">locale/abcoin_es.qm</file>
+        <file alias="fi">locale/abcoin_fi.qm</file>
+        <file alias="fr">locale/abcoin_fr.qm</file>
+        <file alias="it">locale/abcoin_it.qm</file>
+        <file alias="ja">locale/abcoin_ja.qm</file>
+        <file alias="nl">locale/abcoin_nl.qm</file>
+        <file alias="pl">locale/abcoin_pl.qm</file>
+        <file alias="pt">locale/abcoin_pt.qm</file>
+        <file alias="ru">locale/abcoin_ru.qm</file>
+        <file alias="sk">locale/abcoin_sk.qm</file>
+        <file alias="sv">locale/abcoin_sv.qm</file>
+        <file alias="vi">locale/abcoin_vi.qm</file>
+        <file alias="zh_CN">locale/abcoin_zh_CN.qm</file>
+        <file alias="zh_TW">locale/abcoin_zh_TW.qm</file>
+    </qresource>
+</RCC>
