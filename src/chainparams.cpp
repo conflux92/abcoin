@@ -21,17 +21,21 @@
 
 //#define FIND_GENESIS
 
-#define GENESIS_MERKLE_ROOT "0xdc3ce6778ce7a202bf694a38bc1b29076f6b4420a07f301fe6a11cb47ad0c738"
+//#define GENESIS_MERKLE_ROOT "0xdc3ce6778ce7a202bf694a38bc1b29076f6b4420a07f301fe6a11cb47ad0c738"
+#define GENESIS_MERKLE_ROOT "0xa907c19d31cf8195a77adcb38979b542706311d0d32ad4843d666d6bbe003bd9"
 
-#define MAINNET_GENESIS_HASH "0x000008f98b62f58f9d93906115f5a9339b1b17f569ecb2262be5132f618877ef"
+//#define MAINNET_GENESIS_HASH "0x000008f98b62f58f9d93906115f5a9339b1b17f569ecb2262be5132f618877ef"
+#define MAINNET_GENESIS_HASH "0x91034e867d4faf751a68fc7762453fc76e7a11b8aa1eabce7043e4eb9badd424"
 #define MAINNET_GENESIS_NONCE 164980UL
 #define MAINNET_GENESIS_TIMESTAMP 1537966800UL
 
-#define TESTNET_GENESIS_HASH "0x00000c9ef2d2246da5d9de32506ec2367711a47510e382e909a31758d0485cb1"
+//#define TESTNET_GENESIS_HASH "0x00000c9ef2d2246da5d9de32506ec2367711a47510e382e909a31758d0485cb1"
+#define TESTNET_GENESIS_HASH "0x8a8b5eb6a0b6fd310667ce8b9ae0fcddf01bd7423f0456c4cb04d3beedca9881"
 #define TESTNET_GENESIS_NONCE 52495UL
 #define TESTNET_GENESIS_TIMESTAMP 1537966801UL
 
-#define REGTEST_GENESIS_HASH "0x040c2902e12b32f363b417bba28d2e6187652f4e2ed9a33e6363af55015db600"
+//#define REGTEST_GENESIS_HASH "0x040c2902e12b32f363b417bba28d2e6187652f4e2ed9a33e6363af55015db600"
+#define REGTEST_GENESIS_HASH "0x98bf0ddd5a540b032c6f31735c0b836dc3812c57ad8baba94a6c580ee8b687b8"
 #define REGTEST_GENESIS_NONCE 0UL
 #define REGTEST_GENESIS_TIMESTAMP 1537966802UL
 
@@ -86,9 +90,9 @@ static CBlock CreateGenesisBlock(const char* pszTimestamp, const CScript& genesi
 #endif
 	
 	std::cout << "   Nonce: " << genesis.nNonce << std::endl;
-            std::cout << "   Timestamp: " << genesis.nTime << std::endl;
-            std::cout << "   Genesis hash: " << genesis.GetHash().GetHex() << std::endl;
-            std::cout << "   Merkle Root: "  << genesis.hashMerkleRoot.GetHex() << "\n" << std::endl;
+    std::cout << "   Timestamp: " << genesis.nTime << std::endl;
+    std::cout << "   Genesis hash: " << genesis.GetHash().GetHex() << std::endl;
+    std::cout << "   Merkle Root: "  << genesis.hashMerkleRoot.GetHex() << "\n" << std::endl;
 	
     return genesis;
 }
@@ -130,8 +134,8 @@ static CBlock CreateDevNetGenesisBlock(const uint256 &prevBlockHash, const std::
  */
 static CBlock CreateGenesisBlock(uint32_t nTime, uint32_t nNonce, uint32_t nBits, int32_t nVersion, const CAmount& genesisReward)
 {
-    const char* pszTimestamp = "Wired 09/Jan/2014 The Grand Experiment Goes Live: Overstock.com Is Now Accepting Bitcoins";
-    const CScript genesisOutputScript = CScript() << ParseHex("040184710fa689ad5023690c80f3a49c8f13f8d45b8c857fbcbc8bc4a8e4d3eb4b10f4d4604fa08dce601aaf0f470216fe1b51850b4acf21b179c45070ac7b03a9") << OP_CHECKSIG;
+    const char* pszTimestamp = "I created abcoin 09/26/2018 for my test";
+    const CScript genesisOutputScript = CScript() << ParseHex("04665a7f08f6caf71d0dde7dac507931e5be9d301ccd8590e79b0001375bb7a48411a152571ef41c8911cfab4fbffeb561573df86cfdbaaa46449da6f84a31eb80") << OP_CHECKSIG;
     return CreateGenesisBlock(pszTimestamp, genesisOutputScript, nTime, nNonce, nBits, nVersion, genesisReward);
 }
 
@@ -613,8 +617,8 @@ public:
 
         genesis = CreateGenesisBlock(1417713337, 1096447, 0x207fffff, 1, 50 * COIN);
         consensus.hashGenesisBlock = genesis.GetHash();
-        assert(consensus.hashGenesisBlock == uint256S("0x040c2902e12b32f363b417bba28d2e6187652f4e2ed9a33e6363af55015db600"));
-        assert(genesis.hashMerkleRoot == uint256S("0xdc3ce6778ce7a202bf694a38bc1b29076f6b4420a07f301fe6a11cb47ad0c738"));
+        assert(consensus.hashGenesisBlock == uint256S("0x98bf0ddd5a540b032c6f31735c0b836dc3812c57ad8baba94a6c580ee8b687b8"));
+        assert(genesis.hashMerkleRoot == uint256S(GENESIS_MERKLE_ROOT));
 
         vFixedSeeds.clear(); //!< Regtest mode doesn't have any fixed seeds.
         vSeeds.clear();      //!< Regtest mode doesn't have any DNS seeds.
@@ -633,7 +637,7 @@ public:
 
         checkpointData = (CCheckpointData){
             boost::assign::map_list_of
-            ( 0, uint256S("0x040c2902e12b32f363b417bba28d2e6187652f4e2ed9a33e6363af55015db600"))
+            ( 0, uint256S("0x98bf0ddd5a540b032c6f31735c0b836dc3812c57ad8baba94a6c580ee8b687b8"))
         };
 
         chainTxData = ChainTxData{
